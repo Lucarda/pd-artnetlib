@@ -46,7 +46,7 @@ https://www.artisticlicence.com/WebSiteMaster/User%20Guides/art-net.pdf
 
 - [artnettoarray]
 
-  convert _ArtDMX_ packages to a Pd list.
+  - convert _ArtDMX_ packages to a Pd list.
 
   
 --------------------
