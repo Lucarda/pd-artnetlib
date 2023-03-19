@@ -1,0 +1,12 @@
+#N canvas 130 130 602 463 12;
+#X obj 102 201 pdcontrol;
+#X msg 102 177 dir 0;
+#X msg 102 226 \; pd open artnetlib-help.pd \$1;
+#X obj 103 106 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X text 129 109 see general help;
+#X obj 102 141 t b b;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 5 0;
+#X connect 5 0 1 0;
+#X coords 0 -1 1 1 150 30 2 100 100;

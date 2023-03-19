@@ -1,0 +1,14 @@
+#N canvas 321 100 745 525 12;
+#X declare -lib artnetlib;
+#X text 184 5 <-- use this on your top level patch so that the lib gets loaded;
+#X msg 96 247 65 114 116 45 78 101 116 0 0 80 0 14 1 0 0 0 0 4 204 127 102 0, f 65;
+#X obj 96 321 artnettoarray;
+#X obj 95 389 print array-list;
+#X obj 184 353 print array-size;
+#X text 91 223 this Art-Net DMX package has 4 DMX values "204 127 102 0", f 69;
+#X text 252 84 [artnettoarray] converts lists of 8-bit ints from 0 to 255 to float values from 0 to 1 . The converted list comes out in the 1st outlet. the n of items comes out on the 2nd outlet.;
+#X obj 13 6 declare -lib artnetlib;
+#X obj 139 450 help-abs;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
