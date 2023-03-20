@@ -99,6 +99,8 @@ static void artnetroute_free(t_artnetroute *x)
 static void *artnetroute_new(t_symbol *s, int argc, t_atom *argv)
 {
     t_artnetroute *x = (t_artnetroute *)pd_new(artnetroute_class);
+    inlet_new(&x->x_obj, &x->x_obj.ob_pd, &s_float, gensym("universe"));
+    inlet_new(&x->x_obj, &x->x_obj.ob_pd, &s_float, gensym("physical"));
     x->x_outlet0 = outlet_new(&x->x_obj, 0);
     x->x_outlet1 = outlet_new(&x->x_obj, 0);
     
@@ -115,8 +117,8 @@ static void *artnetroute_new(t_symbol *s, int argc, t_atom *argv)
         }
         else
         {
-            artnetroute_physical(x, argv[0].a_w.w_float);
-            artnetroute_universe(x, argv[1].a_w.w_float);
+            artnetroute_universe(x, argv[0].a_w.w_float);
+            artnetroute_physical(x, argv[1].a_w.w_float);
         }
     }
  

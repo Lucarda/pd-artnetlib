@@ -176,6 +176,8 @@ static void artnetsend_free(t_artnetsend *x)
 static void *artnetsend_new(t_symbol *s, int argc, t_atom *argv)
 {
     t_artnetsend *x = (t_artnetsend *)pd_new(artnetsend_class);
+    inlet_new(&x->x_obj, &x->x_obj.ob_pd, &s_float, gensym("universe"));
+    inlet_new(&x->x_obj, &x->x_obj.ob_pd, &s_float, gensym("physical"));
     x->x_outlet1 = outlet_new(&x->x_obj, 0);
     unsigned char pre[12] = {0x41, 0x72, 0x74, 0x2d, 0x4e, 0x65,
                         0x74, 0x00, 0x00, 0x50, 0x00, 0x0e};
@@ -194,8 +196,8 @@ static void *artnetsend_new(t_symbol *s, int argc, t_atom *argv)
         }
         else
         {
-            artnetsend_physical(x, argv[0].a_w.w_float);
-            artnetsend_universe(x, argv[1].a_w.w_float);
+            artnetsend_universe(x, argv[0].a_w.w_float);
+            artnetsend_physical(x, argv[1].a_w.w_float);
         }
     }
     return (void *)x;
