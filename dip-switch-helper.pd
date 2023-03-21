@@ -1,4 +1,7 @@
 #N canvas 219 62 607 519 12;
+#X obj 183 31 cnv 19 10 10 empty empty ---\ n\ to\ dip\ --- 20 12 0 16 #ffffff #404040 0;
+#X obj 183 293 cnv 19 10 10 empty empty ---\ dip\ to\ n\ --- 20 12 0 16 #ffffff #404040 0;
+#X obj 74 65 cnv 19 430 180 empty empty empty 20 12 0 12 #e0e0e0 #404040 0;
 #N canvas 104 104 843 538 gop 0;
 #X obj 156 183 vradio 19 1 0 2 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
 #X obj 183 183 vradio 19 1 0 2 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
@@ -249,8 +252,8 @@
 #X obj 281 128 tgl 19 0 empty empty on/off 24 10 0 16 #fcfcfc #000000 #000000 0 1;
 #X obj 399 129 tgl 19 0 empty empty direction 24 10 0 16 #fcfcfc #000000 #000000 0 1;
 #X floatatom 164 118 5 0 512 0 - - - 24;
-#X obj 107 191 cnv 19 10 10 empty \$0-onoff on 0 0 0 24 #ffffff #404040 0;
-#X obj 153 244 cnv 19 10 10 empty \$0-dire 1\ 2\ 3\ 4\ 5\ 6\ 7\ 8\ 9\ 10 0 0 0 24 #ffffff #404040 0;
+#X obj 107 191 cnv 19 10 10 empty \$0-onoff on 0 0 0 24 #dfdfdf #404040 0;
+#X obj 153 244 cnv 19 10 10 empty \$0-dire 1\ 2\ 3\ 4\ 5\ 6\ 7\ 8\ 9\ 10 0 0 0 24 #dfdfdf #404040 0;
 #X connect 10 0 0 0;
 #X connect 10 1 1 0;
 #X connect 10 2 2 0;
@@ -265,7 +268,8 @@
 #X connect 12 0 10 2;
 #X connect 13 0 10 0;
 #X coords 0 -1 1 1 430 180 2 100 100;
-#X restore 75 64 pd gop;
+#X restore 73 66 pd gop;
+#X obj 73 325 cnv 19 430 130 empty empty empty 20 12 0 12 #e0e0e0 #404040 0;
 #N canvas 172 76 1077 616 dip2n 0;
 #X obj 155 433 unpack 0 0;
 #X msg 140 358 \$1 0;
@@ -294,8 +298,8 @@
 #X obj 605 485 v \$0-dirx;
 #X obj 675 268 v \$0-onoffx;
 #X obj 131 460 t b f;
-#X obj 159 170 cnv 19 10 10 empty \$0-direxx 1\ 2\ 3\ 4\ 5\ 6\ 7\ 8\ 9\ 10 0 0 0 24 #ffffff #404040 0;
-#X obj 113 117 cnv 19 10 10 empty \$0-onoffxx on 0 0 0 24 #ffffff #404040 0;
+#X obj 159 170 cnv 19 10 10 empty \$0-direxx 1\ 2\ 3\ 4\ 5\ 6\ 7\ 8\ 9\ 10 0 0 0 24 #dfdfdf #404040 0;
+#X obj 113 117 cnv 19 10 10 empty \$0-onoffxx on 0 0 0 24 #dfdfdf #404040 0;
 #X obj 239 202 tgl 19 0 empty empty on/off 24 10 0 16 #fcfcfc #000000 #000000 0 1;
 #X obj 357 203 tgl 19 0 empty empty direction 24 10 0 16 #fcfcfc #000000 #000000 0 1;
 #X floatatom 122 192 5 0 512 0 - - - 24;
@@ -465,7 +469,5 @@
 #X connect 45 9 22 0;
 #X connect 46 0 45 0;
 #X coords 0 -1 1 1 430 130 2 100 100;
-#X restore 75 322 pd dip2n;
+#X restore 73 326 pd dip2n;
 #X f 35;
-#X obj 183 31 cnv 19 10 10 empty empty ---\ n\ to\ dip\ --- 20 12 0 16 #ffffff #404040 0;
-#X obj 183 293 cnv 19 10 10 empty empty ---\ dip\ to\ n\ --- 20 12 0 16 #ffffff #404040 0;
